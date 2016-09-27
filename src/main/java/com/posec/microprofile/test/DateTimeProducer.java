@@ -13,6 +13,5 @@ public class DateTimeProducer {
 	{
 		return LocalDateTime.now();
 	}
-	
 }
 

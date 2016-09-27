@@ -1,0 +1,2 @@
+INSERT INTO TOKEN("ID", "DEVICEID", "TOKEN", "EXPIRATIONDATE") VALUES ('1','device_id_1', 'fqjgu9de40l4efhlh6drtek4ns', '2012-06-18 10:34:09') 
+INSERT INTO TOKEN("ID", "DEVICEID", "TOKEN", "EXPIRATIONDATE") VALUES ('2','device_id_2', 'dvciosavrs6ou01j4knld2aeld', '2012-06-18 10:34:09') 
