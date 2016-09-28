@@ -34,8 +34,7 @@ public class TokenService {
 		return persist(token);
 	}
 	
-	@Transactional
-	public Token persist(Token token) {
+	protected Token persist(Token token) {
 		return em.merge(token);
 	}
 
@@ -46,13 +45,11 @@ public class TokenService {
 		return cal.getTime();
 	}
 	
-	
 	private String generateToken()
 	{
 		Random random = new SecureRandom();
 		return new BigInteger(130, random).toString(32);	
 	}
-
 	
 	public Collection<Token> allTokens() {
 		CriteriaBuilder builder = em.getCriteriaBuilder();
@@ -63,4 +60,15 @@ public class TokenService {
 		TypedQuery<Token> allQuery = em.createQuery(all);		
 		return allQuery.getResultList();
 	}
+
+	public Token find(long id) {
+		return em.find(Token.class, id);
+	}
+	
+	public void remove(long id)
+	{
+		Token entity = em.find(Token.class, id);
+		em.remove(entity);
+	}
+	
 }
